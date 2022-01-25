@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    background: #fff;
+}
+
+.squares {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto ;
+    grid-template-rows: auto auto auto;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: 
+    "red1 red1 yellow1 blue1 yellow2 blue2"
+    "red1 red1 yellow3 blue3 red2 red2"
+    "yellow4 blue4 yellow5 blue5 red2 red2";
+}
+
+.square {
+
+}
+.square.square--big {
+}
+.square.square--small {
+    
+}
+
+
+.square.square--red {
+    background-color: red;
+}
+.square.square--red:nth-child(1) {
+    grid-area: red1
+}
+.square.square--red:nth-child(2) {
+    grid-area: red2
+}
+
+.square.square--blue {
+    background-color: blue;
+}
+.square.square--blue.square--blue-one {
+    grid-area: blue1;
+}
+.square.square--blue.square--blue-two {
+    grid-area: blue2;
+}
+.square.square--blue.square--blue-three {
+    grid-area: blue3;
+}
+.square.square--blue.square--blue-four {
+    grid-area: blue4;
+}
+.square.square--blue.square--blue-five {
+    grid-area: blue5;
+}
+
+
+.square.square--yellow {
+    background-color: yellow;
+}
+.square.square--yellow.square--yellow-one {
+    grid-area: yellow1;
+}
+.square.square--yellow.square--yellow-two {
+    grid-area: yellow2;
+}
+.square.square--yellow.square--yellow-three {
+    grid-area: yellow3;
+}
+.square.square--yellow.square--yellow-four {
+    grid-area: yellow4;
+}
+.square.square--yellow.square--yellow-five {
+    grid-area: yellow5;
+}
+
