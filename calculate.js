@@ -12,9 +12,9 @@ const inputs = [...document.querySelectorAll("input")];
 //
 /**
  * Calculate the score
- * @param  {String, Array}    string as a context
- *                            array numbers to calculate
- * @return {Number || String} score or text to show
+ * @param  {String, Array}    string A context
+ *                            array Numbers to calculate
+ * @return {Number || String} Score or text to show
  */
 const calculateByContext = (context, numbers) => {
   if (!numbers.length) return;
