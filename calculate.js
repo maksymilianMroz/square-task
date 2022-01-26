@@ -1,6 +1,7 @@
 let context = "";
-let score = "";
 let numbers = [];
+let score = "";
+let isInputsValid = true;
 
 const inputs = [...document.querySelectorAll("input")];
 
@@ -8,10 +9,12 @@ const calculateByContext = (context, numbers) => {
   if (!numbers.length) return;
 
   numbers.forEach((number) => {
-    if (typeof number !== "number") {
-      return "Wrong input data";
+    if (isNaN(number)) {
+      isInputsValid = false;
     }
   });
+
+  if (!isInputsValid) return "Wrong input data";
 
   if (context === "sum") {
     return numbers.reduce((a, b) => +a + +b);
@@ -34,12 +37,14 @@ document.addEventListener("click", (event) => {
   inputs.forEach((input) => {
     if (input.value === "") return;
 
-    numbers.push(input.value);
+    numbers.push(parseInt(input.value));
   });
 
-  if (numbers.length) score = calculateByContext(context, numbers);
+  score = calculateByContext(context, numbers);
 
-  document.querySelector("output").innerHTML = score;
+  if (score !== undefined) document.querySelector("output").innerHTML = score;
 
   numbers = [];
+  context = "";
+  isInputsValid = true;
 });
