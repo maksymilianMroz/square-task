@@ -8,31 +8,73 @@
 
 body {
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
+/*FORM*/
+.form {
+  order: 1;
+  width: 100%;
+  background-color: grey;
+  padding: 12px 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form .input {
+  border: 1px solid black;
+  padding: 3px;
+  margin: 5px;
+  width: 18%;
+}
+
+.form .input:nth-child(even) {
+  padding: 4.5px 3px;
+}
+
+.form .input:nth-child(3) {
+  min-width: 40%;
+}
+
+.form .input:nth-child(5) {
+  min-width: 35%;
+}
+
+.form .output {
+  border: 1px solid black;
+  padding: 3px;
+  margin: 5px;
+  background-color: rgb(194, 194, 194);
+  display: block;
+  min-width: 35%;
+  color: grey;
+}
+
+/*SQUARES*/
 .squares {
   display: grid;
-
   grid-template-areas:
     "red1 red1 yellow1 blue1 yellow2 blue2"
     "red1 red1 yellow3 blue3 red2 red2"
     "yellow4 blue4 yellow5 blue5 red2 red2";
-  column-gap: 15px;
-  row-gap: 15px;
+  column-gap: 12px;
+  row-gap: 12px;
   width: 1200px;
-  height: 600px;
+  margin: 0 auto;
+  padding: 3% 20%;
+  order: 2;
+  width: 100%;
 }
 
 .square {
   cursor: pointer;
-}
-.square.square--big {
-}
-.square.square--small {
+  aspect-ratio: 1;
 }
 
 .square.square--red {
-  background-color: red;
+  background-color: #e83232;
 }
 .square.square--red.square--red-one {
   grid-area: red1;
@@ -42,7 +84,7 @@ body {
 }
 
 .square.square--blue {
-  background-color: rgb(56, 56, 189);
+  background-color: #3287e8;
 }
 .square.square--blue.square--blue-one {
   grid-area: blue1;
@@ -61,7 +103,7 @@ body {
 }
 
 .square.square--yellow {
-  background-color: rgb(255, 208, 0);
+  background-color: #e8ca32;
 }
 .square.square--yellow.square--yellow-one {
   grid-area: yellow1;
@@ -77,4 +119,81 @@ body {
 }
 .square.square--yellow.square--yellow-five {
   grid-area: yellow5;
+}
+
+@media screen and (max-width: 900px) {
+  .form .input {
+    width: 22%;
+  }
+
+  .form .input:nth-child(3) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .form .input:nth-child(5) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .output {
+    width: 46%;
+  }
+
+  .squares {
+    grid-template-areas:
+      "red1 red1 yellow1 blue1"
+      "red1 red1 yellow2 blue2"
+      "yellow3 red2 red2  blue3"
+      "yellow4 red2 red2  blue4"
+      "yellow5 blue5 . .";
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .form {
+    width: 100%;
+    padding: 5%;
+    order: 3;
+    justify-content: space-between;
+  }
+
+  .form .input {
+    width: 22%;
+    margin: 5px 3px;
+  }
+
+  .form .input:nth-child(3) {
+    min-width: auto;
+    width: 47.5%;
+  }
+
+  .form .input:nth-child(4) {
+    min-width: auto;
+    width: 47.5%;
+  }
+
+  .form .input:nth-child(5) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .output {
+    width: 46%;
+  }
+
+  .squares {
+    width: 100%;
+    padding: 5%;
+    grid-template-areas:
+      "yellow1 blue1"
+      "red1 red1"
+      "red1 red1"
+      "blue2 yellow2 "
+      "yellow3 blue3"
+      "blue4 yellow4 "
+      "red2 red2"
+      " red2 red2  "
+      "yellow5 blue5 ";
+  }
 }

@@ -64,7 +64,7 @@ const clickHandler = (event) => {
   score = calculateByContext(context, numbers);
 
   // show score if its not undefined
-  if (score !== undefined) document.querySelector("output").innerHTML = score;
+  if (score !== undefined) document.querySelector(".output").innerHTML = score;
 
   // variables reset
   numbers = [];
