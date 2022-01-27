@@ -75,4 +75,4 @@ const clickHandler = (event) => {
 // Listen for click events
 document.addEventListener("click", clickHandler, false);
 
-module.exports = calculateByContext;
+if (typeof module !== "undefined") module.exports = calculateByContext;
