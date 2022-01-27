@@ -5,7 +5,8 @@ let context = "";
 let numbers = [];
 let score = "";
 let isInputsValid = true;
-const inputs = [...document.querySelectorAll("input")];
+const inputs = document.querySelectorAll("input");
+const inputsArray = [...inputs];
 
 //
 // Methods
@@ -54,7 +55,7 @@ const clickHandler = (event) => {
   event.target.classList.contains("square--blue") && (context = "multiply");
 
   // add numbers from inputs to array
-  inputs.forEach((input) => {
+  inputsArray.forEach((input) => {
     if (input.value === "") return;
 
     numbers.push(parseInt(input.value));
@@ -73,3 +74,5 @@ const clickHandler = (event) => {
 
 // Listen for click events
 document.addEventListener("click", clickHandler, false);
+
+module.exports = calculateByContext;
