@@ -120,3 +120,32 @@ body {
 .square.square--yellow.square--yellow-five {
   grid-area: yellow5;
 }
+
+@media screen and (max-width: 900px) {
+  .form .input {
+    width: 22%;
+  }
+
+  .form .input:nth-child(3) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .form .input:nth-child(5) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .output {
+    width: 46%;
+  }
+
+  .squares {
+    grid-template-areas:
+      "red1 red1 yellow1 blue1"
+      "red1 red1 yellow2 blue2"
+      "yellow3 red2 red2  blue3"
+      "yellow4 red2 red2  blue4"
+      "yellow5 blue5 . .";
+  }
+}
