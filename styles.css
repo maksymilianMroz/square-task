@@ -149,3 +149,51 @@ body {
       "yellow5 blue5 . .";
   }
 }
+
+@media screen and (max-width: 360px) {
+  .form {
+    width: 100%;
+    padding: 5%;
+    order: 3;
+    justify-content: space-between;
+  }
+
+  .form .input {
+    width: 22%;
+    margin: 5px 3px;
+  }
+
+  .form .input:nth-child(3) {
+    min-width: auto;
+    width: 47.5%;
+  }
+
+  .form .input:nth-child(4) {
+    min-width: auto;
+    width: 47.5%;
+  }
+
+  .form .input:nth-child(5) {
+    min-width: auto;
+    width: 22%;
+  }
+
+  .output {
+    width: 46%;
+  }
+
+  .squares {
+    width: 100%;
+    padding: 5%;
+    grid-template-areas:
+      "yellow1 blue1"
+      "red1 red1"
+      "red1 red1"
+      "blue2 yellow2 "
+      "yellow3 blue3"
+      "blue4 yellow4 "
+      "red2 red2"
+      " red2 red2  "
+      "yellow5 blue5 ";
+  }
+}
